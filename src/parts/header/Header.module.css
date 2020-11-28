@@ -1,0 +1,31 @@
+.header{
+  
+}
+.header__menu{
+  display: grid;
+  grid-template: 1fr / repeat(5, 20%);
+  
+}
+
+
+
+.header__logo{
+  text-align: center;
+  
+}
+.header__logoImg{
+  padding: 5px 0;
+}
+
+.header__menuBlock{
+  text-align: center;
+  padding: 25px 0;
+  
+}
+
+.header__menuCategory{
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  
+}

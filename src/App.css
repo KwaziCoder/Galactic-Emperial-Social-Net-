@@ -1,33 +1,21 @@
-.app-wrapper {
+.wrapper {
   display: grid;
   width: 1200px;
+  height: 2000px;
   margin: 0 auto;
 
-  grid-template-areas: 
-  "h h"
-  "n c";
+  
 
-  grid-template-rows: 60px 1fr;
-  grid-template-columns: 2fr 10fr;
+  grid-template: 75px 1fr / 1fr;
   /* grid-gap: 10px; */
 
   
 }
-
-.header {
-  grid-area: h;
-  background-color: blue;
+.header{
+  grid-row-start: 1;
+  background-color: rgba(15, 15, 15, 1);
 }
-.header img {
-  width: 100px;
-}
-
-.nav {
-  grid-area: n;
-  background-color: blueviolet;
-}
-
-.content {
-  grid-area: c;
-  background-color: chartreuse;
+.profile{
+  grid-row-start: 2;
+  background-color: rgba(225, 222, 222, 1);
 }

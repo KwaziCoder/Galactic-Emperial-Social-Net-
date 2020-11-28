@@ -1,0 +1,17 @@
+.profile__sidebar{
+  height: 100%;
+  background-color: rgba(15, 15, 15, 1);
+  padding-top: 20%;
+}
+.profile__features{
+  display: grid;
+  grid-template: repeat(5, 1fr) / 1fr;
+  row-gap: 80px;
+  margin-left: 25px;
+}
+.profile__feature{
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+  
+}

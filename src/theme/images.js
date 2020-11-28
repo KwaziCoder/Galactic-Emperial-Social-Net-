@@ -1,5 +1,6 @@
 import logo from './../assets/images/logo.png'
-import content from './../assets/images/content.jpg'
+import avatar from './../assets/images/avatar.png'
+import miniAvatar from './../assets/images/miniAvatar.png'
 
 
-export {logo, content};
+export {logo, avatar, miniAvatar};

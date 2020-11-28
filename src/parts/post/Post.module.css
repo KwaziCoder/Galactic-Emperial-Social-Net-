@@ -1,0 +1,17 @@
+.post{
+  width: 90%;
+  background-color: rgba(196, 196, 196, 1);
+  padding: 15px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  display: grid;
+  grid-template: 1fr / 1fr 5fr;
+  column-gap: 30px;
+}
+.post__avatar{
+  border-radius: 50%;
+}
+.post__text{
+  font-size: 22px;
+  font-weight: normal;
+}
