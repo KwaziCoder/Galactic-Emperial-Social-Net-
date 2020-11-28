@@ -4,11 +4,11 @@ import {miniAvatar} from './../../theme/images'
 
 
 
-const Post = () => {
+const Post = (props) => {
   return (
     <div className={classes.post}>
       <img src={miniAvatar} className={classes.post__avatar}/>
-      <div className={classes.post__text}>Haha! We have taken over the base of rebels on Hot! Suck, bitches!!!</div>
+      <div className={classes.post__text}>{props.message}</div>
     </div>
   )
 }
