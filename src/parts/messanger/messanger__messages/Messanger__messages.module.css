@@ -1,0 +1,11 @@
+.messanger__messages{
+  background-color: rgba(196, 196, 196, 1);
+  height: 2000px;
+  padding: 40px;
+}
+.messanger__message{
+  background-color:rgba(190, 42, 42, 0.23);
+  padding: 10px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
