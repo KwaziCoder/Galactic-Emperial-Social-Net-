@@ -14,8 +14,8 @@ const App = () => {
       <div className='wrapper'>
         <div className='header'><Header /></div>
         <div className='content'>
-          <Route path="/profile" component={Profile} />
-          <Route path="/messanger" component={Messanger} />
+          <Route  path="/profile" component={Profile} />
+          <Route  path="/messanger" component={Messanger} />
         </div>
       </div>
     </BrowserRouter>

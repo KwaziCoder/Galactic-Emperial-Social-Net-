@@ -1,5 +1,6 @@
 .post{
-  width: 90%;
+  width: 700px;
+  height: 80px;
   background-color: rgba(196, 196, 196, 1);
   padding: 15px;
   margin-top: 30px;
@@ -10,8 +11,11 @@
 }
 .post__avatar{
   border-radius: 50%;
+  height: 75px;
+  width: 75px;
 }
 .post__text{
-  font-size: 22px;
+  font-size: 20px;
   font-weight: normal;
+  align-self: center;
 }

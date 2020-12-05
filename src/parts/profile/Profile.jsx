@@ -14,7 +14,7 @@ const Profile = () => {
       <div className={classes.profile__title}><Profile__title/></div>
       <div className={classes.profile__sidebar}><Profile__sidebar/></div>
       <div className={classes.profile__posts}><Profile__posts/></div>
-  </div>
+    </div>
   )
 }
 
