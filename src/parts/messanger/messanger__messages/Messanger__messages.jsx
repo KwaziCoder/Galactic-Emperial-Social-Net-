@@ -10,22 +10,12 @@ const Messanger__message = (props) => {
   )
 }
 
-let dialogData = [
-  {message: 'Hi there!'},
-  {message: 'Hi! How are you, bro?'},
-  {message: 'Not so bad! My congragts to you with the victory on Hot!'},
-  {message: 'Thanks! It was a hard battle!'},
-  {message: 'Yes, I’ve heard of it!'},
-]
-
-let messages = dialogData.map( m => <Messanger__message message={m.message}/>)
-
 
 
 const Messanger__messages = (props) => {
   return (
       <div className={classes.messanger__messages}>
-        {messages}
+        {props.messages.map( m => <Messanger__message message={m.message}/>)}
       </div>
     
   )

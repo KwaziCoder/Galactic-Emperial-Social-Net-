@@ -8,14 +8,14 @@ import Messanger from './parts/messanger/Messanger'
 
 
 
-const App = () => {
+const App = (props) => {
   return (
     <BrowserRouter>
       <div className='wrapper'>
         <div className='header'><Header /></div>
         <div className='content'>
-          <Route  path="/profile" component={Profile} />
-          <Route  path="/messanger" component={Messanger} />
+          <Route  path="/profile" render={() => <Profile posts={props.posts}/>} />
+          <Route  path="/messanger" render={() => <Messanger messages={props.messages} dialogs={props.dialogs}/>} />
         </div>
       </div>
     </BrowserRouter>

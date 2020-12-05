@@ -7,13 +7,14 @@ import Profile__title from './profile__title/Profile__title'
 
 
 
-const Profile = () => {
+
+const Profile = (props) => {
   return (
     <div className={classes.profile}>
       <div className={classes.profile__avatar}><Profile__avatar/></div>
       <div className={classes.profile__title}><Profile__title/></div>
       <div className={classes.profile__sidebar}><Profile__sidebar/></div>
-      <div className={classes.profile__posts}><Profile__posts/></div>
+      <div className={classes.profile__posts}><Profile__posts posts={props.posts}/></div>
     </div>
   )
 }
