@@ -1,4 +1,4 @@
-import {renderFullApp} from './../render'
+
 
 let state = {
   profile: {
@@ -31,16 +31,23 @@ let state = {
   },
 }
 
-function writeMessage(text) {
+function writeMessage() {
   state.messanger.messages.push(
-    {message: text}
+    {message: state.messanger.inputMessage.textOfNewMessage}
   );
-  renderFullApp(state);
+  changeInputMessage('');
 }
 
 function changeInputMessage(update) {
   state.messanger.inputMessage.textOfNewMessage = update;
   renderFullApp(state);
+}
+
+
+let renderFullApp;
+
+export function subscribe(eventListener) {
+  renderFullApp = eventListener;
 }
 
 export default state;

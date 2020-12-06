@@ -19,13 +19,11 @@ const Messanger__messages = (props) => {
   let newMessage = React.createRef();
 
   let writeMessage = () => {
-    let text = newMessage.current.value;
-    props.inputState.writeMessage(text);
-    props.inputState.changeInputMessage('');
+    props.inputState.writeMessage();
   }
 
   let changeInputMessage = () => {
-    let update = newMessage.current.input;
+    let update = newMessage.current.value;
     props.inputState.changeInputMessage(update);
   }
 
@@ -33,7 +31,7 @@ const Messanger__messages = (props) => {
       <div className={classes.messanger__messages}>
         {messages}
         <div className={classes.newMessage}>
-          <textarea ref={newMessage} onInput={changeInputMessage} value={props.inputState.textOfNewMessage}></textarea>
+          <textarea ref={newMessage} onChange={changeInputMessage} value={props.inputState.textOfNewMessage}></textarea>
           <button onClick={writeMessage}>Отправить</button>
         </div>
       </div>
