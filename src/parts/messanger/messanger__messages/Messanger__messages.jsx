@@ -19,12 +19,12 @@ const Messanger__messages = (props) => {
   let newMessage = React.createRef();
 
   let writeMessage = () => {
-    props.inputState.writeMessage();
+    props.writeMessage();
   }
 
   let changeInputMessage = () => {
     let update = newMessage.current.value;
-    props.inputState.changeInputMessage(update);
+    props.changeInputMessage(update);
   }
 
   return (

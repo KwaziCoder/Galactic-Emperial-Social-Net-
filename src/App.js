@@ -14,7 +14,7 @@ const App = (props) => {
       <div className='header'><Header /></div>
       <div className='content'>
         <Route path="/profile" render={() => <Profile state={props.state.profile} />} />
-        <Route path="/messanger" render={() => <Messanger state={props.state.messanger} />} />
+        <Route path="/messanger" render={() => <Messanger state={props.state.messanger} writeMessage={props.writeMessage} changeInputMessage={props.changeInputMessage} />} />
       </div>
     </div>
   );

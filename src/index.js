@@ -4,26 +4,27 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom'
 
-import state, {subscribe} from './redux/state'
+import store from './redux/state'
 
 
 
 
 
-function renderFullApp(state) {
+function renderFullApp () {
 
   ReactDOM.render(
     <React.StrictMode>
       <BrowserRouter>
-        <App state={state} />
+        <App state={this.getState()} writeMessage={this.writeMessage.bind(this)} changeInputMessage={this.changeInputMessage.bind(this)}/>
       </BrowserRouter>
     </React.StrictMode>,
     document.getElementById('root')
   );
 }
 
+renderFullApp.bind(store);
 
-renderFullApp(state);
+store.subscribe(renderFullApp);
 
-subscribe(renderFullApp);
+store.setState();
 
