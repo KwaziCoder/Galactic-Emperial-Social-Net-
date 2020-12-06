@@ -19,13 +19,13 @@ const Messanger__messages = (props) => {
   let newMessage = React.createRef();
 
   let writeMessage = () => {
-    let action = {type: 'WRITE-MESSAGE'};
+    let action = props.actionCreator.writeMessageActionCreator();
     props.dispatch(action);
   }
 
   let changeInputMessage = () => {
     let update = newMessage.current.value;
-    let action = {type: 'CHANGE-INPUT-MESSAGE', update: update};
+    let action = props.actionCreator.changeInputMessageActionCreator(update)
     props.dispatch(action);
   }
 

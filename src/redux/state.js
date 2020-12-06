@@ -1,3 +1,7 @@
+const WRITE_MESSAGE = 'WRITE_MESSAGE';
+const CHANGE_INPUT_MESSAGE = 'CHANGE_INPUT_MESSAGE';
+
+
 let store = {
   _state: {
     profile: {
@@ -35,16 +39,16 @@ let store = {
     this._setState = render;
   },
   dispatch(action) {
-    
+
     switch(action.type) {
 
-      case 'WRITE-MESSAGE':
+      case WRITE_MESSAGE:
         let text = this._state.messanger.inputMessage.textOfNewMessage;
         this._state.messanger.messages.push({ message: text });
         this._state.messanger.inputMessage.textOfNewMessage= '';
         break;
 
-      case 'CHANGE-INPUT-MESSAGE':
+      case CHANGE_INPUT_MESSAGE:
         this._state.messanger.inputMessage.textOfNewMessage = action.update;
         break;
     } 
@@ -52,5 +56,15 @@ let store = {
   }
 
 }
+
+export const actionCreator = {
+  writeMessageActionCreator() {
+    return {type: WRITE_MESSAGE}
+  },
+  changeInputMessageActionCreator(update) {
+    return {type: CHANGE_INPUT_MESSAGE, update: update}
+  },
+}
+
 
 export default store;

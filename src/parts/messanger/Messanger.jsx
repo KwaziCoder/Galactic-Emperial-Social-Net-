@@ -8,7 +8,7 @@ const Messanger = (props) => {
   return (
     <div className={classes.messanger}>
       <Messanger__dialogs dialogs={props.state.dialogs}/>
-      <Messanger__messages messages={props.state.messages} inputState={props.state.inputMessage} dispatch={props.dispatch}/>
+      <Messanger__messages messages={props.state.messages} inputState={props.state.inputMessage} dispatch={props.dispatch} actionCreator={props.actionCreator}/>
     </div>
   )
 }
