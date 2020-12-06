@@ -10,21 +10,20 @@ import store from './redux/state'
 
 
 
-function renderFullApp () {
+function renderFullApp() {
 
   ReactDOM.render(
     <React.StrictMode>
       <BrowserRouter>
-        <App state={this.getState()} writeMessage={this.writeMessage.bind(this)} changeInputMessage={this.changeInputMessage.bind(this)}/>
+        <App state={store.getState()} dispatch={store.dispatch.bind(store)}/>
       </BrowserRouter>
     </React.StrictMode>,
     document.getElementById('root')
   );
 }
-
-renderFullApp.bind(store);
-
 store.subscribe(renderFullApp);
 
-store.setState();
+renderFullApp();
+
+
 

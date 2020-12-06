@@ -28,21 +28,27 @@ let store = {
   getState() {
     return this._state;
   },
-  setState() {
-    alert('Колбэк не назначен!')
-  },
-  writeMessage() {
-    this._state.messanger.messages.push(
-      { message: this._state.messanger.inputMessage.textOfNewMessage }
-    );
-    this.changeInputMessage('');
-  },
-  changeInputMessage(update) {
-    this._state.messanger.inputMessage.textOfNewMessage = update;
-    this.setState();
+  _setState() {
+     
   },
   subscribe(render) {
-    this.setState = render;
+    this._setState = render;
+  },
+  dispatch(action) {
+    
+    switch(action.type) {
+
+      case 'WRITE-MESSAGE':
+        let text = this._state.messanger.inputMessage.textOfNewMessage;
+        this._state.messanger.messages.push({ message: text });
+        this._state.messanger.inputMessage.textOfNewMessage= '';
+        break;
+
+      case 'CHANGE-INPUT-MESSAGE':
+        this._state.messanger.inputMessage.textOfNewMessage = action.update;
+        break;
+    } 
+    this._setState();
   }
 
 }
