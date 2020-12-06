@@ -16,9 +16,11 @@ const Messanger__dialog = (props) => {
 
 
 const Messanger__dialogs = (props) => {
+
+  let dialogs = props.dialogs.map( member => <Messanger__dialog id = {member.id} person={member.person} />);
   return (
     <div className={classes.messanger__dialogs}>
-      {props.dialogs.map( member => <Messanger__dialog id = {member.id} person={member.person} />)}
+      {dialogs}
     </div>
   )
 }

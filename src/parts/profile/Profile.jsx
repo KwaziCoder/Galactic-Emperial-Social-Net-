@@ -14,7 +14,7 @@ const Profile = (props) => {
       <div className={classes.profile__avatar}><Profile__avatar/></div>
       <div className={classes.profile__title}><Profile__title/></div>
       <div className={classes.profile__sidebar}><Profile__sidebar/></div>
-      <div className={classes.profile__posts}><Profile__posts posts={props.posts}/></div>
+      <div className={classes.profile__posts}><Profile__posts posts={props.state.posts}/></div>
     </div>
   )
 }

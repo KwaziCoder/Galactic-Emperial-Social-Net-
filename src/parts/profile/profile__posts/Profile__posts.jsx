@@ -5,9 +5,12 @@ import Post from './../../post/Post'
 
 
 const Profile__posts = (props) => {
+
+  let posts = props.posts.map( p => <Post message={p.message} likes={p.likes}/>);
+  
   return (
     <div className={classes.profile__posts}>
-      {props.posts.map( p => <Post message={p.message} likes={p.likes}/>)}  
+      {posts}  
     </div>
   )
 }

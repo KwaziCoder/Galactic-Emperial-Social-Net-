@@ -7,8 +7,8 @@ import Messanger__messages from './messanger__messages/Messanger__messages'
 const Messanger = (props) => {
   return (
     <div className={classes.messanger}>
-      <Messanger__dialogs dialogs={props.dialogs}/>
-      <Messanger__messages messages={props.messages}/>
+      <Messanger__dialogs dialogs={props.state.dialogs}/>
+      <Messanger__messages messages={props.state.messages} inputState={props.state.inputMessage}/>
     </div>
   )
 }
