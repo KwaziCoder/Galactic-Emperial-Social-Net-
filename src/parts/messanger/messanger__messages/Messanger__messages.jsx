@@ -1,5 +1,6 @@
 import React from 'react';
 import classes from './Messanger__messages.module.css'
+import {actionCreator} from './../../../redux/messanger-reducer'
 
 
 const Messanger__message = (props) => {
@@ -16,16 +17,14 @@ const Messanger__messages = (props) => {
 
   let messages = props.messages.map( m => <Messanger__message message={m.message}/> );
 
-  let newMessage = React.createRef();
-
   let writeMessage = () => {
-    let action = props.actionCreator.writeMessageActionCreator();
+    let action = actionCreator.writeMessage();
     props.dispatch(action);
   }
 
-  let changeInputMessage = () => {
-    let update = newMessage.current.value;
-    let action = props.actionCreator.changeInputMessageActionCreator(update)
+  let changeInputMessage = (e) => {
+    let update = e.target.value;
+    let action = actionCreator.changeInputMessage(update);
     props.dispatch(action);
   }
 
@@ -33,7 +32,7 @@ const Messanger__messages = (props) => {
       <div className={classes.messanger__messages}>
         {messages}
         <div className={classes.newMessage}>
-          <textarea ref={newMessage} onChange={changeInputMessage} value={props.inputState.textOfNewMessage}></textarea>
+          <textarea onChange={changeInputMessage} value={props.inputState.textOfNewMessage}></textarea>
           <button onClick={writeMessage}>Отправить</button>
         </div>
       </div>

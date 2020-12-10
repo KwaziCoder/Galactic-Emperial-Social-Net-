@@ -1,6 +1,5 @@
-const WRITE_MESSAGE = 'WRITE_MESSAGE';
-const CHANGE_INPUT_MESSAGE = 'CHANGE_INPUT_MESSAGE';
-
+import profileReducer from './profile-reducer';
+import messangerReducer from './messanger-reducer';
 
 let store = {
   _state: {
@@ -39,31 +38,11 @@ let store = {
     this._setState = render;
   },
   dispatch(action) {
-
-    switch(action.type) {
-
-      case WRITE_MESSAGE:
-        let text = this._state.messanger.inputMessage.textOfNewMessage;
-        this._state.messanger.messages.push({ message: text });
-        this._state.messanger.inputMessage.textOfNewMessage= '';
-        break;
-
-      case CHANGE_INPUT_MESSAGE:
-        this._state.messanger.inputMessage.textOfNewMessage = action.update;
-        break;
-    } 
+    this._state.profile = profileReducer(this._state.profile, action);
+    this._state.messanger = messangerReducer(this._state.messanger, action);
     this._setState();
   }
 
-}
-
-export const actionCreator = {
-  writeMessageActionCreator() {
-    return {type: WRITE_MESSAGE}
-  },
-  changeInputMessageActionCreator(update) {
-    return {type: CHANGE_INPUT_MESSAGE, update: update}
-  },
 }
 
 
