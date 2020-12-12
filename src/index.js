@@ -14,7 +14,7 @@ function renderFullApp() {
   ReactDOM.render(
     <React.StrictMode>
       <BrowserRouter>
-        <App state={store.getState()} dispatch={store.dispatch.bind(store)} />
+        <App store={store} state={store.getState()} />
       </BrowserRouter>
     </React.StrictMode>,
     document.getElementById('root')
