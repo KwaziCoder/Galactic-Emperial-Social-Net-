@@ -1,11 +1,11 @@
 import React from 'react';
-import classes from './Messanger__messages.module.css'
-import {actionCreator} from './../../../redux/messanger-reducer'
+import classes from './Messages.module.css'
+import {actionCreator} from '../../../redux/messanger-reducer'
 
 
-const Messanger__message = (props) => {
+const Message = (props) => {
   return (
-    <div className={classes.messanger__message}>
+    <div className={classes.message}>
       {props.message} 
     </div> 
   )
@@ -13,9 +13,9 @@ const Messanger__message = (props) => {
 
 
 
-const Messanger__messages = (props) => {
+const Messages = (props) => {
 
-  let messages = props.messages.map( m => <Messanger__message message={m.message}/> );
+  let messages = props.messages.map( m => <Message message={m.message}/> );
 
   let writeMessage = () => {
     let action = actionCreator.writeMessage();
@@ -29,7 +29,7 @@ const Messanger__messages = (props) => {
   }
 
   return (
-      <div className={classes.messanger__messages}>
+      <div className={classes.messages}>
         {messages}
         <div className={classes.newMessage}>
           <textarea onChange={changeInputMessage} value={props.inputState.textOfNewMessage}></textarea>
@@ -41,4 +41,4 @@ const Messanger__messages = (props) => {
 }
 
 
-export default Messanger__messages;
+export default Messages;

@@ -1,9 +1,9 @@
 import React from 'react';
 import classes from './Profile.module.css'
-import Profile__avatar from './profile__avatar/Profile__avatar'
-import Profile__posts from './profile__posts/Profile__posts'
-import Profile__sidebar from './profile__sidebar/Profile__sidebar'
-import Profile__title from './profile__title/Profile__title'
+import Avatar from './avatar/Avatar'
+import Posts from './posts/Posts'
+import Sidebar from './sidebar/Sidebar'
+import Title from './title/Title'
 
 
 
@@ -11,10 +11,10 @@ import Profile__title from './profile__title/Profile__title'
 const Profile = (props) => {
   return (
     <div className={classes.profile}>
-      <div className={classes.profile__avatar}><Profile__avatar/></div>
-      <div className={classes.profile__title}><Profile__title/></div>
-      <div className={classes.profile__sidebar}><Profile__sidebar/></div>
-      <div className={classes.profile__posts}><Profile__posts posts={props.state.posts}/></div>
+      <div className={classes.avatar}><Avatar/></div>
+      <div className={classes.title}><Title/></div>
+      <div className={classes.sidebar}><Sidebar/></div>
+      <div className={classes.posts}><Posts posts={props.state.posts}/></div>
     </div>
   )
 }

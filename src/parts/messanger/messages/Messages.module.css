@@ -1,8 +1,8 @@
-.messanger__messages{
+.messages{
   background-color: rgba(196, 196, 196, 1);
   padding: 40px;
 }
-.messanger__message{
+.message{
   background-color:rgba(190, 42, 42, 0.23);
   padding: 10px;
   margin-top: 30px;

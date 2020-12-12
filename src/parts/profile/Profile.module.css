@@ -15,17 +15,17 @@
   column-gap: 90px;
 }
 
-.profile__avatar{
+.avatar{
   grid-area: avatar;
   
 }
-.profile__title{
+.title{
   grid-area: title;
 }
-.profile__sidebar{
+.sidebar{
   grid-area: sidebar;
   
 }
-.profile__posts{
+.posts{
   grid-area: posts;
 }

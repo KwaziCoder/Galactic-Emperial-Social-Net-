@@ -1,12 +1,12 @@
-.profile__title{
+.title{
   
 }
-.profile__name{
+.name{
   font-weight: bold;
   font-size: 32px;
   margin-bottom: 10px;
 }
-.profile__status{
+.status{
   font-style: italic;
   font-size: 20px;
 }
