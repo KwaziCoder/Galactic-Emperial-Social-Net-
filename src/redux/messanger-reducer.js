@@ -25,14 +25,22 @@ const messangerReducer = (state = initialState, action) => {
   switch(action.type) {
 
     case WRITE_MESSAGE:
-      let text = state.inputMessage.textOfNewMessage;
-      state.messages.push({ message: text });
-      state.inputMessage.textOfNewMessage= '';
-      return state;
+      return {
+      ...state,
+      messages: [...state.messages, { message: state.inputMessage.textOfNewMessage }],
+      inputMessage: {
+        textOfNewMessage: '',
+      },
+      
+      }
 
     case CHANGE_INPUT_MESSAGE:
-      state.inputMessage.textOfNewMessage = action.update;
-      return state;
+      return {
+      ...state,
+      inputMessage: {
+        textOfNewMessage: action.update,
+      },
+      }
 
     default:
       return state;

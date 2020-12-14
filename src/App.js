@@ -13,8 +13,8 @@ const App = (props) => {
     <div className='wrapper'>
       <div className='header'><Header /></div>
       <div className='content'>
-        <Route path="/profile" render={() => <Profile state={props.state.profile} />} />
-        <Route path="/messanger" render={() => <Messanger state={props.state.messanger} store={props.store}/>} />
+        <Route path="/profile" render={() => <Profile />} />
+        <Route path="/messanger" render={() => <Messanger />} />
       </div>
     </div>
   );

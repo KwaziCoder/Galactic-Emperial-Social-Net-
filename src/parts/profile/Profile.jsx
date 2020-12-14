@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './Profile.module.css'
 import Avatar from './avatar/Avatar'
-import Posts from './posts/Posts'
+import Posts_container from './posts/Posts_container'
 import Sidebar from './sidebar/Sidebar'
 import Title from './title/Title'
 
@@ -14,7 +14,7 @@ const Profile = (props) => {
       <div className={classes.avatar}><Avatar/></div>
       <div className={classes.title}><Title/></div>
       <div className={classes.sidebar}><Sidebar/></div>
-      <div className={classes.posts}><Posts posts={props.state.posts}/></div>
+      <div className={classes.posts}><Posts_container/></div>
     </div>
   )
 }

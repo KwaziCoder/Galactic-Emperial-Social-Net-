@@ -1,29 +1,22 @@
 import React from 'react';
 import {actionCreator} from '../../../redux/messanger-reducer'
 import Messages from './Messages'
+import { connect } from 'react-redux';
+
+
+const mapStateToProps = (state) => ({
+  messages: state.messanger.messages,
+  inputState: state.messanger.inputMessage,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  writeMessage: () => {dispatch(actionCreator.writeMessage())},
+  changeInputMessage: (update) => {dispatch(actionCreator.changeInputMessage(update))},
+});
 
 
 
-
-const Messages_container = (props) => {
-
-  let state = props.store.getState();
-
-  let writeMessage = () => {
-    let action = actionCreator.writeMessage();
-    props.store.dispatch(action);
-  }
-
-  let changeInputMessage = (update) => {
-    let action = actionCreator.changeInputMessage(update);
-    props.store.dispatch(action);
-  }
-
-  return (
-      <Messages writeMessage={writeMessage} changeInputMessage={changeInputMessage} messages={state.messanger.messages} inputState={state.messanger.inputMessage}/>
-      
-  )
-}
+const Messages_container = connect(mapStateToProps, mapDispatchToProps)(Messages);
 
 
 export default Messages_container;
