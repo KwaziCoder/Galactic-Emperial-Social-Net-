@@ -1,4 +1,23 @@
 
-subscriptions {
-  background-color: #E2DFDF;
+.subscriptions {
+  min-height: 100%;
+  background-color: rgba(226, 223, 223, 1);
+
+  display: grid;
+  grid-template: 1fr / 2fr 1fr;
 }
+
+
+.groups{}
+.group{}
+.groupAvatar_container{}
+.groupAvatar{}
+.groupTitle{}
+.subscribersNumber{}
+.subscribe_button{}
+
+
+.searchControl{}
+.search_form{}
+.options{}
+.option{}

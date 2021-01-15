@@ -1,5 +1,5 @@
 import React from 'react';
-import Subsriptions from './Subscriptions'
+import Subscriptions from './Subscriptions'
 import {connect} from 'react-redux';
 import {setGroupsAC, subscribeAC, unsubscribeAC, updateSearchInputAC, switchOptionAC} from './../../redux/subscriptions-reducer'
 
@@ -16,7 +16,7 @@ const mapDispatchToProps = (dispatch) => ({
   switchOption: (optionId) => dispatch( switchOptionAC(optionId) ),
 })
 
-const Subsriptions_container = connect(mapStateToProps, mapDispatchToProps)(Subsriptions);
+const Subsriptions_container = connect(mapStateToProps, mapDispatchToProps)(Subscriptions);
 
 
 export default Subsriptions_container;

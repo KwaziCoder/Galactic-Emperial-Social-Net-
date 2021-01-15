@@ -6,11 +6,9 @@ const SWITCH_OPTION = 'SWITCH_OPTION'
 
 
 const initialState = {
-  groups: [
-
-  ],
+  groups: [],
   searchControl: {
-    userInput: 'seacrh...',
+    userInput: '',
     options: [
       { id: 1, name: 'option1', switched: true },
       { id: 2, name: 'option2', switched: false },
@@ -35,7 +33,7 @@ const subscriptionsReducer = (state = initialState, action) => {
     case SUBSCRIBE:
       return {
         ...state,
-        groups: state.subscriptions.groups.map((group) => {
+        groups: state.groups.map((group) => {
           if (group.id === action.groupId) {
             return { ...group, subscribed: true };
           } else {
@@ -43,52 +41,46 @@ const subscriptionsReducer = (state = initialState, action) => {
           }
         })
       };
-  
+
 
     case UNSUBSCRIBE:
-return {
-  ...state,
-  subscriptions: {
-    ...state.subscriptions,
-    groups: state.subscriptions.Groups.map((group) => {
-      if (group.id === action.groupId) {
-        return { ...group, subscribed: false };
-      } else {
-        return group;
-      }
-    })
-  }
-};
+      return {
+        ...state,
+        groups: state.groups.map((group) => {
+          if (group.id === action.groupId) {
+            return { ...group, subscribed: false };
+          } else {
+            return group;
+          }
+        })
+      };
+
 
     case UPDATE_SEARCH_INPUT:
-return {
-  ...state,
-  subscriptions: {
-    ...state.subscriptions,
-    searchControl: {
-      userInput: action.update,
-      ...state.subscriptions.searchControl,
-    }
-  }
-};
+      return {
+        ...state,
+        searchControl: {
+          userInput: action.update,
+          ...state.searchControl,
+        }
+      };
+
 
     case SWITCH_OPTION:
-return {
-  ...state,
-  subscriptions: {
-    ...state.subscriptions,
-    searchControl: state.subscriptions.searchControl.options.map(option => {
-      if (option.id === action.optionId) {
-        return { ...option, switched: !option.switched };
-      } else {
-        return option;
-      }
-    })
-  }
-};
+      return {
+        ...state,
+        searchControl: state.searchControl.options.map(option => {
+          if (option.id === action.optionId) {
+            return { ...option, switched: !option.switched };
+          } else {
+            return option;
+          }
+        })
+      };
+
 
     default:
-return state;
+      return state;
   }
 }
 
