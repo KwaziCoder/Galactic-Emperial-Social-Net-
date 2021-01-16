@@ -60,8 +60,8 @@ const subscriptionsReducer = (state = initialState, action) => {
       return {
         ...state,
         searchControl: {
-          userInput: action.update,
           ...state.searchControl,
+          userInput: action.update,
         }
       };
 
@@ -69,13 +69,15 @@ const subscriptionsReducer = (state = initialState, action) => {
     case SWITCH_OPTION:
       return {
         ...state,
-        searchControl: state.searchControl.options.map(option => {
-          if (option.id === action.optionId) {
-            return { ...option, switched: !option.switched };
-          } else {
-            return option;
-          }
-        })
+        searchControl: {
+          options: state.searchControl.options.map(option => {
+            if (option.id === action.optionId) {
+              return { ...option, switched: !option.switched };
+            } else {
+              return option;
+            }
+          })
+        }
       };
 
 
@@ -97,8 +99,8 @@ export const unsubscribeAC = (groupId) => {
   return { type: UNSUBSCRIBE, groupId }
 }
 export const updateSearchInputAC = (update) => {
-  return { type: UPDATE_SEARCH_INPUT, update: update }
+  return { type: UPDATE_SEARCH_INPUT, update }
 }
 export const switchOptionAC = (optionId) => {
-  return { type: SWITCH_OPTION, option: optionId }
+  return { type: SWITCH_OPTION, optionId }
 }

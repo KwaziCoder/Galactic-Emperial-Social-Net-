@@ -1,6 +1,7 @@
 
 .subscriptions {
   min-height: 100%;
+  padding: 100px 100px 0 100px;
   background-color: rgba(226, 223, 223, 1);
 
   display: grid;
@@ -9,15 +10,50 @@
 
 
 .groups{}
-.group{}
+
+.group{
+  display: grid;
+  grid-template: 1fr / 1fr 4fr 1fr;
+  align-items: center;
+  background-color: rgba(196, 196, 196, 1);
+  max-width: 500px;
+  padding: 10px;
+  margin-bottom: 25px;
+  
+}
 .groupAvatar_container{}
-.groupAvatar{}
-.groupTitle{}
+.groupAvatar{
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+}
+.descriptionGroupContainer{
+  
+}
+.groupTitle{
+  font-weight: bold;
+}
 .subscribersNumber{}
-.subscribe_button{}
+.subscribe_button{
+  margin-top: 50px;
+  background-color: rgba(15, 15, 15, 1);
+  width: 100px;
+  text-align: center;
+  font-size: 14px;
+  color: white;
+}
 
 
-.searchControl{}
+.searchControl{
+  background-color: rgba(196, 196, 196, 1);
+  width: 248px;
+  height: 430px;
+  padding: 5%;
+}
+
 .search_form{}
+.input{
+  width: 100%;
+}
 .options{}
 .option{}
