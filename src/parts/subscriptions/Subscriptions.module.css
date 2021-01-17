@@ -19,8 +19,8 @@
   max-width: 500px;
   padding: 10px;
   margin-bottom: 25px;
-  
 }
+
 .groupAvatar_container{}
 .groupAvatar{
   width: 65px;
@@ -32,6 +32,8 @@
 }
 .groupTitle{
   font-weight: bold;
+  text-decoration: none;
+  color: black;
 }
 .subscribersNumber{}
 .subscribe_button{
@@ -57,3 +59,4 @@
 }
 .options{}
 .option{}
+.findButton{}

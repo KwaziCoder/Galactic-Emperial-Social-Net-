@@ -1,7 +1,7 @@
 import React from 'react';
 import Subscriptions from './Subscriptions'
 import {connect} from 'react-redux';
-import {setGroupsAC, subscribeAC, unsubscribeAC, updateSearchInputAC, switchOptionAC} from './../../redux/subscriptions-reducer'
+import {setGroupsAC, subscribeAC, unsubscribeAC, updateSearchInputAC, switchOptionAC, findGroupsAC} from './../../redux/subscriptions-reducer'
 
 const mapStateToProps = (state) => ({
   groups: state.subscriptions.groups,
@@ -14,6 +14,7 @@ const mapDispatchToProps = (dispatch) => ({
   unsubscribe: (groupId) => dispatch( unsubscribeAC(groupId) ),
   updateSearchInput: (update) => dispatch( updateSearchInputAC(update) ),
   switchOption: (optionId) => dispatch( switchOptionAC(optionId) ),
+  findGroups: () => dispatch ( findGroupsAC() ),
 })
 
 const Subsriptions_container = connect(mapStateToProps, mapDispatchToProps)(Subscriptions);

@@ -1,24 +1,27 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import classes from './Subscriptions.module.css'
-import { groupAvatar, avatar } from './../../theme/images'
+import { lotro, marvel, potter, sw } from './../../theme/images'
+import {NavLink} from 'react-router-dom'
 
 
 let groups = [
-  { id: 1, image: avatar, title: 'Star wars community', subscribersNumber: 114, subscribed: false },
-  { id: 2, image: groupAvatar, title: 'Lord of the rings community', subscribersNumber: 75, subscribed: true },
-  { id: 3, image: groupAvatar, title: 'Harry Potter community', subscribersNumber: 45, subscribed: false },
-  { id: 4, image: groupAvatar, title: 'Marvel community', subscribersNumber: 268, subscribed: false },
+  { id: 1, image: sw, title: 'Star wars community', subscribersNumber: 114, subscribed: false},
+  { id: 2, image: lotro, title: 'Lord of the rings community', subscribersNumber: 75, subscribed: true},
+  { id: 3, image: potter, title: 'Harry Potter community', subscribersNumber: 45, subscribed: false},
+  { id: 4, image: marvel, title: 'Marvel community', subscribersNumber: 268, subscribed: false},
 ];
 
 
 const Subscriptions = (props) => {
-
+  
   if (props.groups.length === 0) {
     props.setGroups(groups)
   }
   return (
     <div className={classes.subscriptions}>
+
       <div className={classes.groups}>
+
         {props.groups.map(group => {
           return (
             <div key={group.id} className={classes.group}>
@@ -27,9 +30,9 @@ const Subscriptions = (props) => {
               </div>
 
               <div className={classes.descriptionGroupContainer}>
-                <div className={classes.groupTitle}>
+                <NavLink to='/group' className={classes.groupTitle}>
                   {group.title}
-                </div>
+                </NavLink>
 
                 <div className={classes.subscribersNumber}>
                   {group.subscribersNumber} subscribers
@@ -40,7 +43,6 @@ const Subscriptions = (props) => {
               : <button className={classes.subscribe_button} onClick={() => props.subscribe(group.id)}>subscribe</button>
               }
               
-
             </div>
           )
         })
@@ -51,7 +53,6 @@ const Subscriptions = (props) => {
 
         <form className={classes.search_form}>
           <input className={classes.input} type='text' placeholder='search...' value={props.searchControl.userInput} onChange={(e) => props.updateSearchInput(e.target.value)}></input>
-
           <div className={classes.options}>
             {props.searchControl.options.map(option => {
               return (
@@ -59,6 +60,12 @@ const Subscriptions = (props) => {
               )
             })}
           </div>
+
+          <button className={classes.findButton} onClick={ (e) => {
+          e.preventDefault();
+          props.findGroups();
+        }}>Find</button>
+
         </form>
       </div>
     </div>

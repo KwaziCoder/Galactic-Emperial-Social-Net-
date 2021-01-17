@@ -1,8 +1,9 @@
-const SET_GROUPS = 'SET_GROUPS'
-const SUBSCRIBE = 'SUBSCRIBE'
-const UNSUBSCRIBE = 'UNSUBSCRIBE'
-const UPDATE_SEARCH_INPUT = 'UPDATE_SEARCH_INPUT'
-const SWITCH_OPTION = 'SWITCH_OPTION'
+const SET_GROUPS = 'SET_GROUPS';
+const SUBSCRIBE = 'SUBSCRIBE';
+const UNSUBSCRIBE = 'UNSUBSCRIBE';
+const UPDATE_SEARCH_INPUT = 'UPDATE_SEARCH_INPUT';
+const SWITCH_OPTION = 'SWITCH_OPTION';
+const FIND_GROUPS = 'FIND_GROUPS';
 
 
 const initialState = {
@@ -17,7 +18,7 @@ const initialState = {
       { id: 5, name: 'option5', switched: false },
     ]
   }
-}
+};
 
 
 const subscriptionsReducer = (state = initialState, action) => {
@@ -80,7 +81,18 @@ const subscriptionsReducer = (state = initialState, action) => {
         }
       };
 
+    case FIND_GROUPS:
+      return {
+        ...state,
+        groups: state.groups.map( group => {
+          if (group.name === state.searchControl.userInput) {
+            return group;
+          } 
+        })
+      }
 
+      
+    
     default:
       return state;
   }
@@ -90,17 +102,21 @@ export default subscriptionsReducer;
 
 
 export const setGroupsAC = (groups) => {
-  return { type: SET_GROUPS, groups: groups }
+  return { type: SET_GROUPS, groups: groups };
 }
 export const subscribeAC = (groupId) => {
-  return { type: SUBSCRIBE, groupId }
+  return { type: SUBSCRIBE, groupId };
 }
 export const unsubscribeAC = (groupId) => {
-  return { type: UNSUBSCRIBE, groupId }
+  return { type: UNSUBSCRIBE, groupId };
 }
 export const updateSearchInputAC = (update) => {
   return { type: UPDATE_SEARCH_INPUT, update }
 }
 export const switchOptionAC = (optionId) => {
-  return { type: SWITCH_OPTION, optionId }
+  return { type: SWITCH_OPTION, optionId };
+}
+
+export const findGroupsAC = () => {
+  return { type: FIND_GROUPS };
 }
