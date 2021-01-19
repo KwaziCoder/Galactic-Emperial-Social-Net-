@@ -7,6 +7,18 @@ import lotro from './../assets/images/lotro.jpeg'
 import marvel from './../assets/images/marvel.png'
 import potter from './../assets/images/potter.jpg'
 import sw from './../assets/images/sw.png'
+import news1 from './../assets/images/news1.jpg'
+import news2 from './../assets/images/news2.png'
+import news3 from './../assets/images/news3.jpg'
+import news4 from './../assets/images/news4.jpg'
+import news5 from './../assets/images/news5.jpg'
+import gallery1 from './../assets/images/gallery1.jpg'
+import gallery2 from './../assets/images/gallery2.png'
+import gallery3 from './../assets/images/gallery3.jpg'
+import gallery4 from './../assets/images/gallery4.jpg'
+import gallery5 from './../assets/images/gallery5.jpg'
+import gallery6 from './../assets/images/gallery6.jpg'
+import gallery7 from './../assets/images/gallery7.jpg'
 
 
-export {logo, avatar, miniAvatar, nanoAvatar, eye, lotro, marvel, potter, sw};
+export {logo, avatar, miniAvatar, nanoAvatar, eye, lotro, marvel, potter, sw, news1, news2, news3, news4, news5, gallery1, gallery2, gallery3, gallery4, gallery5, gallery6, gallery7};

@@ -1,14 +1,136 @@
-.group{}
+.group{
+  display: grid;
+  grid-template-areas:
+                        'news header gallery'
+                        'news header gallery'
+                        'news posts gallery'
+                        'news posts gallery';
+
+  justify-items: center;
+                        
+                        
+}
 
 
-.header{}
-.header_image_container{}
-.header_image{}
-.content{}
-.group_name{}
-.group_moto{}
-.group_description{}
-.group_subscribers{}
-.subscribe_button{}
+
+.header{
+  grid-area: header;
+  margin-bottom: 50px;
+}
+.header_image_container{
+  margin-bottom: 5px;
+}
+.header_image{
+  width: 791px;
+  height: 116px;
+}
+.content{
+  display: grid;
+  grid-template: 1fr / 2fr 1fr;
+  background-color: rgba(196, 196, 196, 1);
+  width: 791px;
+  height: 155px;
+  padding: 10px;
+}
+
+.leftSide{}
+.group_name{
+  font-weight: bold;
+  font-size: 15px;
+  margin-bottom: 3px;
+}
+.group_moto{
+  font-size: 12px;
+  font-style: italic;
+  margin-bottom: 15px;
+}
+.group_description{
+  font-size: 12px;
+  line-height: 15px;
+}
+
+.rightSide{
+  display: grid;
+  grid-template: 20px / 1.5fr 1fr;
+  justify-items: end;
+}
+.group_subscribers{
+  font-size: 14px;
+}
+.subscribe_button{
+  background-color: rgba(15, 15, 15, 1);
+  color: white;
+  width: 86px;
+}
 
 
+
+
+
+.newsList{
+  grid-area: news;
+  background-color: blue;
+  width: 150px;
+}
+.newsList_title{}
+.news{}
+.news_image_container{}
+.news_image{
+  width: 100px;
+  height: 100px;
+}
+.news_title{}
+
+
+
+
+
+.posts{
+  grid-area: posts;
+  width: 576px;
+}
+.post{
+  background-color:rgba(196, 196, 196, 1);
+  margin-bottom: 30px;
+}
+.post_header{
+  display: grid;
+  grid-template-areas: 
+                      'avatar author author'
+                      'avatar date date'
+}
+.post_avatar_container{
+  grid-area: avatar;
+}
+.post_avatar{
+  width: 100px;
+  height: 100px;
+}
+.post_author{
+  grid-area: author;
+}
+.post_date{
+  grid-area: date;
+}
+.post_image_container{}
+.post_image{
+  width: 100px;
+  height: 100px;
+}
+.post_text{}
+
+
+
+
+
+.gallery{
+  grid-area: gallery;
+  background-color: yellow;
+  width: 150px;
+}
+.gallery_title{}
+.gallery_image_container{}
+.gallery_image{
+  width: 100px;
+  height: 100px;
+}

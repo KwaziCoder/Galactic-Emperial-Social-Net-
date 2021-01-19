@@ -1,19 +1,18 @@
 import React from 'react';
 import Group from './Group'
 import {connect} from 'react-redux';
-import {setNewsAC, setPostsAC, setGalleryAC,  subscribeAC, unsubscribeAC, } from './../../redux/group-reducer'
+import {setGroupAC, subscribeAC, unsubscribeAC, } from './../../redux/group-reducer'
 
 const mapStateToProps = (state) => ({
-  header: state.header,
-  news: state.news,
-  posts: state.posts,
-  gallery: state.gallery
+  start: state.group.start,
+  header: state.group.header,
+  news: state.group.news,
+  posts: state.group.posts,
+  gallery: state.group.gallery
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  setNews: (news) => dispatch( setNewsAC(news) ),
-  setPosts: (posts) => dispatch( setPostsAC(posts) ),
-  setGallery: (images) => dispatch( setGalleryAC(images) ),
+  setGroup: (group) => dispatch ( setGroupAC(group) ),
   subscribe: () => dispatch( subscribeAC() ),
   unsubscribe: () => dispatch( unsubscribeAC() ),
 })
