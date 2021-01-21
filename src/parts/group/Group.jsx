@@ -72,11 +72,8 @@ const Group = (props) => {
         <div className={classes.newsList_title}>News of group</div>
         {props.news.map(n => {
           return (
-            <div key={n.id} className={classes.news}>
-              <div className={classes.news_image_container}>
-                <img className={classes.news_image} src={n.image} />
-              </div>
-              <div className={classes.news_title}>{n.title}</div>
+            <div key={n.id} style={{ backgroundImage: 'url(' + n.image + ')', backgroundSize: 'cover', }} className={classes.news}>
+              {n.title}
             </div>
           )
         })}
@@ -105,11 +102,11 @@ const Group = (props) => {
 
 
       <div className={classes.gallery}>
-        <div className={classes.gallery_title}>{props.gallery.title}</div>
+        <div className={classes.gallery_title}>Gallery</div>
         {props.gallery.map(img => {
           return (
-            <div key={img.id} className={classes.gallery_image_container}>
-              <img className={classes.gallery_image} src={img.image} />
+            <div key={img.id} style={{ backgroundImage: 'url(' + img.image + ')', backgroundSize: 'cover', }} className={classes.gallery_image}>
+              
             </div>
           )
         })}
