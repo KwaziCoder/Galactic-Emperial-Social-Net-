@@ -91,9 +91,7 @@ const Group = (props) => {
                 <div className={classes.post_author}>{p.author}</div>
                 <div className={classes.post_date}>{p.date}</div>
               </div>
-              <div className={classes.post_image_container}>
-                <img className={classes.post_image} src={p.image} />
-              </div>
+              <div style={{ backgroundImage: 'url(' + p.image + ')', backgroundSize: 'cover', }} className={classes.post_image}></div>
               <div className={classes.post_text}>{p.text}</div>
             </div>
           )
@@ -106,7 +104,7 @@ const Group = (props) => {
         {props.gallery.map(img => {
           return (
             <div key={img.id} style={{ backgroundImage: 'url(' + img.image + ')', backgroundSize: 'cover', }} className={classes.gallery_image}>
-              
+
             </div>
           )
         })}
